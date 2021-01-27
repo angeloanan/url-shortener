@@ -8,7 +8,9 @@ const AIRTABLE_TABLE = process.env.AIRTABLE_TABLE as string
 
 Airtable.configure({
   endpointUrl: 'https://api.airtable.com',
-  apiKey: AIRTABLE_KEY
+  apiKey: AIRTABLE_KEY,
+  apiVersion: '0.1.0',
+  noRetryIfRateLimited: false
 })
 
 // Currying pog
