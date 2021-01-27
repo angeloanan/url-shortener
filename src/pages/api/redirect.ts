@@ -21,7 +21,7 @@ export default async (
   res: NextApiResponse
 ): Promise<void> => {
   console.time('Request took')
-  const path = req.url
+  const path = req.url.split('?')[0]
 
   try {
     const airtableQuery = await airtableTable
