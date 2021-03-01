@@ -4,6 +4,7 @@
   "author": "Christopher Angelo<angelo@angeloanan.xyz>",
   "license": "MIT",
   "dependencies": {
+    "@fontsource/inter": "^4.2.1",
     "@types/airtable": "^0.8.1",
     "airtable": "^0.10.1",
     "next": "canary",
