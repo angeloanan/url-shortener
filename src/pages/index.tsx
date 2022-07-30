@@ -1,8 +1,15 @@
 import * as React from 'react'
 
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const IndexPage = () => {
+  const router = useRouter()
+
+  React.useEffect(() => {
+    router.push('https://angeloanan.xyz')
+  }, [router])
+
   return (
     <>
       <h1 style={{ fontWeight: 700 }}>Angelo's URL shortener</h1>
