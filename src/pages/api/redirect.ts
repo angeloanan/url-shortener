@@ -21,7 +21,7 @@ export default async (
   res: NextApiResponse
 ): Promise<void> => {
   console.time('Request took')
-  const path = req.url.split('?')[0]
+  const path = req.url!.split('?')[0]
 
   try {
     const airtableQuery = await airtableTable
@@ -35,7 +35,7 @@ export default async (
     if (!airtableEntry.get('isActive')) throw new Error('inactive')
     const dest = airtableEntry.get('destination')
 
-    res.redirect(dest).end()
+    res.redirect(dest as string).end()
     console.log('Request to', path, 'was redirected to', dest)
   } catch (e) {
     const error = e as Error
